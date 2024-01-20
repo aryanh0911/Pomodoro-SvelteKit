@@ -76,24 +76,24 @@
     $: BreakSeconds = breakSeconds;
   </script>
   
-  <div class="container max-w-2xl ml-auto mr-auto mt-60 p-10 rounded-xl shadow-lg">
+  <div class="container max-w-lg md:max-w-2xl ml-auto mr-auto p-10 rounded-xl shadow-lg">
     <div class="time flex justify-left gap-5 mb-5">
-      <p class="text-2xl">Time -</p>
-      <p class="text-2xl">{TimeMinutes}</p>
-      <p class="semicolon text-2xl">:</p>
-      <p class="text-2xl">{TimeSeconds}</p>
+      <p class="text-xl md:text-2xl">Time -</p>
+      <p class="text-xl md:text-2xl font-mono">{TimeMinutes}</p>
+      <p class="semicolon text-xl md:text-2xl">:</p>
+      <p class="text-xl md:text-2xl font-mono">{TimeSeconds}</p>
     </div>
   
     <div class="break flex justify-left gap-5 mb-5">
-      <p class="text-2xl">Break -</p>
-      <p class="text-2xl">{BreakMinutes}</p>
-      <p class="semicolon text-2xl">:</p>
-      <p class="text-2xl">{BreakSeconds}</p>
+      <p class="text-xl md:text-2xl">Break -</p>
+      <p class="text-xl md:text-2xl font-mono">{BreakMinutes}</p>
+      <p class="semicolon text-xl md:text-2xl">:</p>
+      <p class="text-xl md:text-2xl font-mono">{BreakSeconds}</p>
     </div>
   
     <div class="iterations flex justify-left gap-5 mb-8">
-      <p class="text-2xl">Iterations -</p>
-      <p class="text-2xl">{iterations}</p>
+      <p class="text-xl md:text-2xl">Iterations -</p>
+      <p class="text-xl md:text-2xl font-mono">{iterations}</p>
     </div>
   
     <div class="flex gap-3">
