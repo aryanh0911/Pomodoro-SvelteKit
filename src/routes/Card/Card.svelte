@@ -106,10 +106,52 @@
 
 
   <style>
+
+    @property --gradient-angle {
+        syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false
+    }
+
+    :root {
+        --clr-1: #5fbdd4;
+        --clr-2: #1d87e4;
+        --clr-3: #5e07ea;
+        --clr-4: ;
+    }
+
 	.container {
 		/* max-width: 600px; */
-		background: #2f364476;
+		background: #2f3644;
+        position: relative;
 	}
+
+    .container::before,
+    .container::after {
+        content: "";
+        position: absolute;
+        inset: -.2rem;
+        z-index: -1;
+        background: conic-gradient(
+            from var(--gradient-angle),
+            var(--clr-1),
+            var(--clr-2),
+            var(--clr-3),
+            var(--clr-2),
+            var(--clr-1)
+            );
+        border-radius: inherit;
+        animation: rotation 5s linear infinite;
+    }
+
+    .container::after {
+        filter: blur(3.5rem)
+    }
+
+    @keyframes rotation {
+        0% { --gradient-angle: 0deg }
+        100% { --gradient-angle: 360deg }
+    }
 </style>
 
   
