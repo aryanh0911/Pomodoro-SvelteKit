@@ -76,7 +76,7 @@
     $: BreakSeconds = breakSeconds;
   </script>
   
-  <div class="container max-w-lg md:max-w-2xl ml-auto mr-auto p-10 rounded-xl shadow-lg">
+  <div class="container max-w-[19rem] md:max-w-[36rem] ml-auto mr-auto p-10 rounded-xl shadow-lg">
     <div class="time flex justify-left gap-5 mb-5">
       <p class="text-xl md:text-2xl">Time -</p>
       <p class="text-xl md:text-2xl font-mono">{TimeMinutes}</p>
@@ -101,6 +101,7 @@
       <button on:click={pauseHandler} class="btn btn-outline">Pause</button>
       <button on:click={resetHandler} class="btn btn-outline">Reset</button>
     </div>
+  
   </div>
 
 
@@ -130,7 +131,7 @@
     .container::after {
         content: "";
         position: absolute;
-        inset: -.2rem;
+        inset: -.1rem;
         z-index: -1;
         background: conic-gradient(
             from var(--gradient-angle),
@@ -141,11 +142,11 @@
             var(--clr-1)
             );
         border-radius: inherit;
-        animation: rotation 5s linear infinite;
+        animation: rotation 8s linear infinite;
     }
 
     .container::after {
-        filter: blur(3.5rem)
+        filter: blur(6rem)
     }
 
     @keyframes rotation {
