@@ -1,16 +1,32 @@
 <script>
-    let time = new Date()
-    time.toDateString()
+    import { onMount, onDestroy } from 'svelte';
 
-    // let month = time.getMonth()
-    
+    let time = new Date();
+
+    $: dynamicTime = time.toLocaleString();
+
+    const updateDateTime = () => {
+        time = new Date();
+        dynamicTime = time.toLocaleString();
+    };
+
+    const interval = setInterval(updateDateTime, 1000);
+
+
+    onMount(() => {
+        interval;
+    });
+
+    onDestroy(() => {
+        clearInterval(interval);
+    });
 </script>
 
-
 <div>
-    <h1 class="opacity-50 font-mono text-center px-8  mt-60 mb-3 text-sm md:text-base">{time}</h1>
-    <!-- <h1>{month}</h1 -->
+    <h1 class="opacity-50 font-mono text-center px-8 mt-60 mb-3 text-sm md:text-base">{dynamicTime}</h1>
 </div>
+
+
 
 
 <style>
